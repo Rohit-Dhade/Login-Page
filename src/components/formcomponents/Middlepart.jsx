@@ -1,32 +1,40 @@
 import { FaRegSquare } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Middlepart = () => {
+
+    const navigate = useNavigate();
 
     const submitForm= (e) =>{
         e.preventDefault();
         console.log('Form is submitted.......');
         document.getElementById("create-course-form").reset();
+        navigate('/create');
     }
     return (
         <form id="create-course-form" onSubmit={submitForm} className="flex flex-col gap-4 mt-2">
 
             <div className="flex gap-2">
                 <input
+                    type="text"
                     className="w-1/2 h-8 bg-[#3B354D] text-white rounded-sm text-xs pl-2 outline-none focus:ring-0"
                     placeholder="First Name"
                     required
                 />
                 <input
+                    type="text"
                     className="w-1/2 h-8 bg-[#3B354D] text-white rounded-sm text-xs pl-2 outline-none focus:ring-0"
                     placeholder="Last Name"
                     required
-
+                    pattern="[A-Za-z\s]+"
+                    title="Only letters allowed"
                 />
             </div>
 
             <input
+                type="email"
                 className="w-full h-8 bg-[#3B354D] text-white rounded-sm text-xs pl-2 outline-none focus:ring-0"
                 placeholder="Email"
                 required

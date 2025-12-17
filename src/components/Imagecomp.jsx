@@ -1,8 +1,10 @@
 import React from 'react'
 import { BsArrowRight } from "react-icons/bs";
 import { useState , useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Imagecomp = () => {
+    const navigate = useNavigate();
     const [imageIndex, setimageIndex] = useState(0)
     const imageArray = [
         'https://i.pinimg.com/736x/9e/65/2b/9e652be084abb0f1c60b1d149d545219.jpg',
@@ -20,7 +22,7 @@ const Imagecomp = () => {
     return (
         <div className='h-full w-full'>
             <div style={{ backgroundImage: `url(${imageArray[imageIndex]})` }} className='h-full w-full rounded-lg bg-cover bg-no-repeat relative transition-all duration-900'>
-                <button className='absolute top-2 right-2 flex items-center justify-center gap-2 text-[11px] text-white opacity-70 rounded-2xl bg-[#5E539F]/20 pl-2 pr-2 cursor-pointer active:scale-95 transition'>back to website <BsArrowRight color='white' /></button>
+                <button onClick={()=> navigate('/home')} className='absolute top-2 right-2 flex items-center justify-center gap-2 text-[11px] text-white opacity-70 rounded-2xl bg-[#5E539F]/20 pl-2 pr-2 cursor-pointer active:scale-95 transition'>back to website <BsArrowRight color='white' /></button>
                 <div className='flex flex-col justify-center items-center gap-2 text-white absolute bottom-2.5 left-[30%]'>
                     <div className='flex flex-col opacity-70'>
                         <h3>Capturing moments,</h3>

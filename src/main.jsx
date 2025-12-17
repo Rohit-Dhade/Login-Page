@@ -4,11 +4,10 @@ import './index.css'
 import App from './App.jsx'
 import Createdsuccessfully from './components/Createdsuccessfully.jsx'
 import HomePag from './components/HomePage.jsx'
+import {BrowserRouter} from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <BrowserRouter>
     <App />
-    {/* <Createdsuccessfully/> */}
-    {/* <HomePag/> */}
-  </StrictMode>,
+  </BrowserRouter>,
 )
