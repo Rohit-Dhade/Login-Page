@@ -3,33 +3,44 @@ import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 
 const Middlepart = () => {
+
+    const submitForm= (e) =>{
+        e.preventDefault();
+        console.log('Form is submitted.......');
+        document.getElementById("create-course-form").reset();
+    }
     return (
-        <form className="flex flex-col gap-4 mt-2">
+        <form id="create-course-form" onSubmit={submitForm} className="flex flex-col gap-4 mt-2">
 
             <div className="flex gap-2">
                 <input
                     className="w-1/2 h-8 bg-[#3B354D] text-white rounded-sm text-xs pl-2 outline-none focus:ring-0"
                     placeholder="First Name"
+                    required
                 />
                 <input
                     className="w-1/2 h-8 bg-[#3B354D] text-white rounded-sm text-xs pl-2 outline-none focus:ring-0"
                     placeholder="Last Name"
+                    required
+
                 />
             </div>
 
             <input
                 className="w-full h-8 bg-[#3B354D] text-white rounded-sm text-xs pl-2 outline-none focus:ring-0"
                 placeholder="Email"
+                required
             />
 
             <input
                 type="password"
                 className="w-full h-8 bg-[#3B354D] text-white rounded-sm text-xs pl-2 outline-none focus:ring-0"
                 placeholder="Enter your password"
+                required
             />
 
             <label className="flex items-center gap-2 text-[10px] text-white">
-                <input type="checkbox" className="accent-[#FF8AFF]" />
+                <input type="checkbox" className="accent-[#FF8AFF]" required/>
                 I agree to the
                 <a className="text-[#FF8AFF] underline ml-1" href="#">
                     Terms & Conditions
